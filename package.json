@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build:rojo": "node tools/genFeatureTree.js",
+    "build:sourcemap": "cd places/game && rojo sourcemap -o sourcemap.json && cd ../lobby && rojo sourcemap -o sourcemap.json",
     "watch:rojo": "chokidar \"places/*/src/**/*\" \"shared/src/**/*\" -c \"npm run build:rojo\""
   },
   "dependencies": {
