@@ -1,0 +1,53 @@
+{
+  "emitLegacyScripts": false,
+  "name": "ragdoll-rumble-game",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Source": {
+        "$className": "Folder",
+        "StartUp": {
+          "$className": "Folder",
+          "Client": {
+            "$path": "src/startup/Client.client.luau"
+          }
+        },
+        "Core": {
+          "$className": "Folder",
+          "Placeholder": {
+            "$path": "src/core/Placeholder.luau"
+          }
+        },
+        "Features": {
+          "$className": "Folder",
+          "Placeholder": {
+            "$path": "src/features/Placeholder.luau"
+          }
+        },
+        "Game": {
+          "$className": "Folder",
+          "Placeholder": {
+            "$path": "src/game/Placeholder.luau"
+          }
+        },
+        "Shared": {
+          "$className": "Folder",
+          "Hello": {
+            "$path": "../../shared/src/Hello.luau"
+          }
+        }
+      },
+      "Packages": {
+        "$path": "../../Packages"
+      }
+    },
+    "ServerScriptService": {
+      "StartUp": {
+        "$className": "Folder",
+        "Server": {
+          "$path": "src/startup/Server.server.luau"
+        }
+      }
+    }
+  }
+}

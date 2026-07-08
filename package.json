@@ -1,0 +1,12 @@
+{
+  "name": "ragdoll-rumble",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:rojo": "node tools/genFeatureTree.js",
+    "watch:rojo": "chokidar \"places/*/src/**/*\" \"shared/src/**/*\" -c \"npm run build:rojo\""
+  },
+  "dependencies": {
+    "chokidar-cli": "^3.0.0"
+  }
+}
