@@ -1,8 +1,13 @@
 # Claude Code
 .claude
 
+# Node
+node_modules/
+
 # Miscellaneous
 Packages/
 ServerPackages/
 sourcemap.json
 wally.lock
+NOTES.md
+GAME_PLAN.md
