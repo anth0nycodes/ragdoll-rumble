@@ -1,0 +1,12 @@
+{
+  "emitLegacyScripts": true,
+  "name": "ragdoll-rumble",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Packages": {
+        "$path": "Packages"
+      }
+    }
+  }
+}
