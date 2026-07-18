@@ -19,9 +19,5 @@ return function()
 	container.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	container.ClipToDeviceSafeArea = false
 	container.Parent = playerGui
-
-	Vide.mount(function()
-		local root = RootUI()
-		root.Parent = container
-	end)
+	Vide.mount(RootUI, container)
 end
