@@ -20,20 +20,65 @@
         },
         "Features": {
           "$className": "Folder",
-          "Placeholder": {
-            "$path": "src/features/Placeholder.luau"
+          "App": {
+            "$className": "Folder",
+            "UI": {
+              "$className": "Folder",
+              "Menus": {
+                "$className": "Folder",
+                "MainMenu": {
+                  "$path": "src/features/app/ui/menus/MainMenu.luau"
+                },
+                "MenuRoot": {
+                  "$path": "src/features/app/ui/menus/MenuRoot.luau"
+                }
+              }
+            }
+          },
+          "Game": {
+            "$className": "Folder",
+            "GameServiceClient": {
+              "$path": "src/features/game/GameServiceClient.luau"
+            }
           }
         },
         "Game": {
           "$className": "Folder",
-          "Placeholder": {
-            "$path": "src/game/Placeholder.luau"
+          "Assets": {
+            "$className": "Folder",
+            "ImageIds": {
+              "$path": "src/game/assets/ImageIds.luau"
+            }
           }
         },
         "Shared": {
           "$className": "Folder",
-          "Hello": {
-            "$path": "../../shared/src/Hello.luau"
+          "MountUI": {
+            "$path": "../../shared/src/MountUI.luau"
+          },
+          "RootUI": {
+            "$path": "../../shared/src/RootUI.luau"
+          },
+          "Components": {
+            "$className": "Folder",
+            "UI": {
+              "$className": "Folder",
+              "Button": {
+                "$path": "../../shared/src/components/ui/Button.luau"
+              },
+              "ImageButton": {
+                "$path": "../../shared/src/components/ui/ImageButton.luau"
+              },
+              "ImageLabel": {
+                "$path": "../../shared/src/components/ui/ImageLabel.luau"
+              },
+              "Label": {
+                "$path": "../../shared/src/components/ui/Label.luau"
+              }
+            }
+          },
+          "root.story": {
+            "$path": "../../shared/src/root.story.luau"
           }
         }
       },
@@ -46,6 +91,15 @@
         "$className": "Folder",
         "Server": {
           "$path": "src/startup/Server.server.luau"
+        }
+      },
+      "Features": {
+        "$className": "Folder",
+        "Game": {
+          "$className": "Folder",
+          "GameServiceServer": {
+            "$path": "src/features/game/GameServiceServer.luau"
+          }
         }
       }
     }

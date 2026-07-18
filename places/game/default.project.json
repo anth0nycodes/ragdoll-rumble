@@ -32,8 +32,32 @@
         },
         "Shared": {
           "$className": "Folder",
-          "Hello": {
-            "$path": "../../shared/src/Hello.luau"
+          "MountUI": {
+            "$path": "../../shared/src/MountUI.luau"
+          },
+          "RootUI": {
+            "$path": "../../shared/src/RootUI.luau"
+          },
+          "Components": {
+            "$className": "Folder",
+            "UI": {
+              "$className": "Folder",
+              "Button": {
+                "$path": "../../shared/src/components/ui/Button.luau"
+              },
+              "ImageButton": {
+                "$path": "../../shared/src/components/ui/ImageButton.luau"
+              },
+              "ImageLabel": {
+                "$path": "../../shared/src/components/ui/ImageLabel.luau"
+              },
+              "Label": {
+                "$path": "../../shared/src/components/ui/Label.luau"
+              }
+            }
+          },
+          "root.story": {
+            "$path": "../../shared/src/root.story.luau"
           }
         }
       },
