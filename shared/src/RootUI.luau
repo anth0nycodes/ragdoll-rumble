@@ -7,13 +7,14 @@ local Vide = require(ReplicatedStorage.Packages.Vide)
 local create = Vide.create
 
 local capturedRoots = {}
+
 for _, module in ReplicatedStorage.Source.Features:GetDescendants() do
 	if module:IsA("ModuleScript") and string.match(module.Name, "Root") and module ~= script then
 		capturedRoots[module.Name] = require(module) :: any
 	end
 end
 
-local function RootUI()
+return function()
 	local root = create("Frame")({
 		Name = "RootUI",
 		Size = UDim2.fromScale(1, 1),
@@ -29,5 +30,3 @@ local function RootUI()
 
 	return root
 end
-
-return RootUI
