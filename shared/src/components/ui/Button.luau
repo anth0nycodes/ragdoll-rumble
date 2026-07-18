@@ -26,9 +26,7 @@ local function Button(props: TextButtonProps)
 		BackgroundColor3 = props.BackgroundColor3,
 		TextColor3 = props.TextColor3,
 		Activated = props.Activated,
-		create("UICorner")({
-			CornerRadius = if props.CornerRadius then props.CornerRadius else UDim.new(0.1, 0),
-		}),
+		if props.CornerRadius then create("UICorner")({ CornerRadius = props.CornerRadius }) else nil,
 	})
 end
 

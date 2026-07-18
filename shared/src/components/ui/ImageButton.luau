@@ -24,9 +24,7 @@ local function ImageButton(props: ImageButtonProps)
 		Size = if props.Size then props.Size else UDim2.fromScale(0.15, 0.05),
 		Position = props.Position,
 		Activated = props.Activated,
-		create("UICorner")({
-			CornerRadius = if props.CornerRadius then props.CornerRadius else UDim.new(0.1, 0),
-		}),
+		if props.CornerRadius then create("UICorner")({ CornerRadius = props.CornerRadius }) else nil,
 	})
 end
 
