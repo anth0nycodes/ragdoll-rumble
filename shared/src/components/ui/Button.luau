@@ -11,6 +11,8 @@ type TextButtonProps = {
 	Size: UDim2?,
 	Position: UDim2?,
 	Text: string,
+	TextSize: number?,
+	TextScaled: boolean?,
 	BackgroundColor3: Color3?,
 	TextColor3: Color3?,
 	CornerRadius: UDim?,
@@ -20,6 +22,8 @@ type TextButtonProps = {
 local function Button(props: TextButtonProps)
 	return create("TextButton")({
 		Text = props.Text,
+		TextSize = props.TextSize,
+		TextScaled = if props.TextSize then false else props.TextScaled,
 		AnchorPoint = props.AnchorPoint,
 		Position = props.Position,
 		Size = if props.Size then props.Size else UDim2.fromScale(0.15, 0.05),

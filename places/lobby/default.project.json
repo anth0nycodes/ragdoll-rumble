@@ -20,8 +20,20 @@
         },
         "Features": {
           "$className": "Folder",
-          "Placeholder": {
-            "$path": "src/features/Placeholder.luau"
+          "App": {
+            "$className": "Folder",
+            "UI": {
+              "$className": "Folder",
+              "Menus": {
+                "$className": "Folder",
+                "MainMenu": {
+                  "$path": "src/features/app/ui/menus/MainMenu.luau"
+                },
+                "MenuRoot": {
+                  "$path": "src/features/app/ui/menus/MenuRoot.luau"
+                }
+              }
+            }
           }
         },
         "Game": {
@@ -32,8 +44,35 @@
         },
         "Shared": {
           "$className": "Folder",
-          "Hello": {
-            "$path": "../../shared/src/Hello.luau"
+          "MountUI": {
+            "$path": "../../shared/src/MountUI.luau"
+          },
+          "RootUI": {
+            "$path": "../../shared/src/RootUI.luau"
+          },
+          "Components": {
+            "$className": "Folder",
+            "UI": {
+              "$className": "Folder",
+              "Button": {
+                "$path": "../../shared/src/components/ui/Button.luau"
+              },
+              "Frame": {
+                "$path": "../../shared/src/components/ui/Frame.luau"
+              },
+              "ImageButton": {
+                "$path": "../../shared/src/components/ui/ImageButton.luau"
+              },
+              "ImageLabel": {
+                "$path": "../../shared/src/components/ui/ImageLabel.luau"
+              },
+              "Label": {
+                "$path": "../../shared/src/components/ui/Label.luau"
+              }
+            }
+          },
+          "root.story": {
+            "$path": "../../shared/src/root.story.luau"
           }
         }
       },
