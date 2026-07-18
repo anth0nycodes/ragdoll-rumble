@@ -34,12 +34,21 @@
                 }
               }
             }
+          },
+          "Game": {
+            "$className": "Folder",
+            "GameServiceClient": {
+              "$path": "src/features/game/GameServiceClient.luau"
+            }
           }
         },
         "Game": {
           "$className": "Folder",
-          "Placeholder": {
-            "$path": "src/game/Placeholder.luau"
+          "Assets": {
+            "$className": "Folder",
+            "ImageIds": {
+              "$path": "src/game/assets/ImageIds.luau"
+            }
           }
         },
         "Shared": {
@@ -85,6 +94,15 @@
         "$className": "Folder",
         "Server": {
           "$path": "src/startup/Server.server.luau"
+        }
+      },
+      "Features": {
+        "$className": "Folder",
+        "Game": {
+          "$className": "Folder",
+          "GameServiceServer": {
+            "$path": "src/features/game/GameServiceServer.luau"
+          }
         }
       }
     }
