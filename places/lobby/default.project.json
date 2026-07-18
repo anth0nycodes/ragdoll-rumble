@@ -66,9 +66,6 @@
               "Button": {
                 "$path": "../../shared/src/components/ui/Button.luau"
               },
-              "Frame": {
-                "$path": "../../shared/src/components/ui/Frame.luau"
-              },
               "ImageButton": {
                 "$path": "../../shared/src/components/ui/ImageButton.luau"
               },
