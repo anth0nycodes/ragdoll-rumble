@@ -21,7 +21,7 @@ local function RootUI()
 	})
 
 	for _, rootModule in capturedRoots do
-		local result = rootModule(root)
+		local result = rootModule()
 		if result then
 			result.Parent = root
 		end

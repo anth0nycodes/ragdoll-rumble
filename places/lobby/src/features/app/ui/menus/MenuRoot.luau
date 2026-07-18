@@ -22,7 +22,7 @@ return function()
 	})
 
 	for _, menuModule in capturedMenus do
-		local result = menuModule(menu)
+		local result = menuModule()
 		if result then
 			result.Parent = menu
 		end
