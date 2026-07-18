@@ -22,10 +22,7 @@ return function()
 	})
 
 	for _, rootModule in capturedRoots do
-		local result = rootModule()
-		if result then
-			result.Parent = root
-		end
+		Vide.mount(rootModule, root)
 	end
 
 	return root

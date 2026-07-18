@@ -22,10 +22,7 @@ return function()
 	})
 
 	for _, menuModule in capturedMenus do
-		local result = menuModule()
-		if result then
-			result.Parent = menu
-		end
+		Vide.mount(menuModule, menu)
 	end
 
 	return menu
