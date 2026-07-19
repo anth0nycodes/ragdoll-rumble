@@ -7,3 +7,4 @@ realm = "shared"
 [dependencies]
 Vide = "centau/vide@0.4.0"
 DataServiceTyped = "leifstout/dataservicetyped@1.0.4"
+Networker = "leifstout/networker@0.3.1"

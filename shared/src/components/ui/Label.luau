@@ -4,6 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- Packages
 local Vide = require(ReplicatedStorage.Packages.Vide)
+local UIStroke = require(ReplicatedStorage.Source.Shared.Components.UI.UIStroke)
 local create = Vide.create
 
 type Stroke = {
@@ -51,7 +52,7 @@ local function Label(props: TextLabelProps)
 		RichText = props.RichText,
 		Font = props.Font,
 		if props.Stroke
-			then create("UIStroke")({
+			then UIStroke({
 				Thickness = props.Stroke.Thickness,
 				Color = props.Stroke.Color,
 				Transparency = props.Stroke.Transparency,

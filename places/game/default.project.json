@@ -20,8 +20,11 @@
         },
         "Features": {
           "$className": "Folder",
-          "Placeholder": {
-            "$path": "src/features/Placeholder.luau"
+          "Game": {
+            "$className": "Folder",
+            "GameServiceClient": {
+              "$path": "src/features/game/GameServiceClient.luau"
+            }
           }
         },
         "Game": {
@@ -45,6 +48,9 @@
               "Button": {
                 "$path": "../../shared/src/components/ui/Button.luau"
               },
+              "Frame": {
+                "$path": "../../shared/src/components/ui/Frame.luau"
+              },
               "ImageButton": {
                 "$path": "../../shared/src/components/ui/ImageButton.luau"
               },
@@ -53,6 +59,27 @@
               },
               "Label": {
                 "$path": "../../shared/src/components/ui/Label.luau"
+              },
+              "UICorner": {
+                "$path": "../../shared/src/components/ui/UICorner.luau"
+              },
+              "UIGradient": {
+                "$path": "../../shared/src/components/ui/UIGradient.luau"
+              },
+              "UIGridLayout": {
+                "$path": "../../shared/src/components/ui/UIGridLayout.luau"
+              },
+              "UIListLayout": {
+                "$path": "../../shared/src/components/ui/UIListLayout.luau"
+              },
+              "UIPadding": {
+                "$path": "../../shared/src/components/ui/UIPadding.luau"
+              },
+              "UIScale": {
+                "$path": "../../shared/src/components/ui/UIScale.luau"
+              },
+              "UIStroke": {
+                "$path": "../../shared/src/components/ui/UIStroke.luau"
               }
             }
           },
@@ -70,6 +97,15 @@
         "$className": "Folder",
         "Server": {
           "$path": "src/startup/Server.server.luau"
+        }
+      },
+      "Features": {
+        "$className": "Folder",
+        "Game": {
+          "$className": "Folder",
+          "GameServiceServer": {
+            "$path": "src/features/game/GameServiceServer.luau"
+          }
         }
       }
     }

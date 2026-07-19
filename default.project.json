@@ -7,8 +7,35 @@
       "Packages": {
         "$path": "Packages"
       },
-      "Shared": {
-        "$path": "shared/src"
+      "Source": {
+        "$className": "Folder",
+        "Shared": {
+          "$className": "Folder",
+          "MountUI": {
+            "$path": "shared/src/MountUI.luau"
+          },
+          "RootUI": {
+            "$path": "shared/src/RootUI.luau"
+          },
+          "Components": {
+            "$className": "Folder",
+            "UI": {
+              "$className": "Folder",
+              "Frame": {
+                "$path": "shared/src/components/ui/Frame.luau"
+              },
+              "UICorner": {
+                "$path": "shared/src/components/ui/UICorner.luau"
+              },
+              "UIStroke": {
+                "$path": "shared/src/components/ui/UIStroke.luau"
+              }
+            }
+          },
+          "root.story": {
+            "$path": "shared/src/root.story.luau"
+          }
+        }
       }
     }
   }

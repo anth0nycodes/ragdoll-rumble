@@ -4,7 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- Packages
 local Vide = require(ReplicatedStorage.Packages.Vide)
-local create = Vide.create
+local Frame = require(ReplicatedStorage.Source.Shared.Components.UI.Frame)
 
 local capturedRoots = {}
 
@@ -15,10 +15,8 @@ for _, module in ReplicatedStorage.Source.Features:GetDescendants() do
 end
 
 return function()
-	local root = create("Frame")({
+	local root = Frame({
 		Name = "RootUI",
-		Size = UDim2.fromScale(1, 1),
-		BackgroundTransparency = 1,
 	})
 
 	for _, rootModule in capturedRoots do

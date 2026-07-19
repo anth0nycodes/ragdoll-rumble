@@ -4,6 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- Packages
 local Vide = require(ReplicatedStorage.Packages.Vide)
+local UICorner = require(ReplicatedStorage.Source.Shared.Components.UI.UICorner)
 local create = Vide.create
 
 type ImageButtonProps = {
@@ -14,7 +15,10 @@ type ImageButtonProps = {
 	AutomaticSize: Enum.AutomaticSize?,
 	BackgroundTransparency: number?,
 	Image: string,
-	Activated: () -> (),
+	Activated: ((input: InputObject, clickCount: number) -> ())?,
+	MouseEnter: ((x: number, y: number) -> ())?,
+	MouseLeave: ((x: number, y: number) -> ())?,
+	InputBegan: ((input: InputObject) -> ())?,
 	CornerRadius: UDim?,
 }
 
@@ -28,7 +32,10 @@ local function ImageButton(props: ImageButtonProps)
 		BackgroundTransparency = props.BackgroundTransparency or 1,
 		Image = props.Image,
 		Activated = props.Activated,
-		if props.CornerRadius then create("UICorner")({ CornerRadius = props.CornerRadius }) else nil,
+		MouseEnter = props.MouseEnter,
+		MouseLeave = props.MouseLeave,
+		InputBegan = props.InputBegan,
+		if props.CornerRadius then UICorner({ CornerRadius = props.CornerRadius }) else nil,
 	})
 end
 
