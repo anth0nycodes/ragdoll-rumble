@@ -4,6 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- Packages
 local Vide = require(ReplicatedStorage.Packages.Vide)
+local UICorner = require(ReplicatedStorage.Source.Shared.Components.UI.UICorner)
 local create = Vide.create
 
 type TextButtonProps = {
@@ -17,7 +18,10 @@ type TextButtonProps = {
 	TextSize: number?,
 	TextScaled: boolean?,
 	TextColor3: Color3?,
-	Activated: () -> (),
+	Activated: ((input: InputObject, clickCount: number) -> ())?,
+	MouseEnter: ((x: number, y: number) -> ())?,
+	MouseLeave: ((x: number, y: number) -> ())?,
+	InputBegan: ((input: InputObject) -> ())?,
 	CornerRadius: UDim?,
 }
 
@@ -34,7 +38,10 @@ local function Button(props: TextButtonProps)
 		TextScaled = if props.TextSize then false else props.TextScaled,
 		TextColor3 = props.TextColor3,
 		Activated = props.Activated,
-		if props.CornerRadius then create("UICorner")({ CornerRadius = props.CornerRadius }) else nil,
+		MouseEnter = props.MouseEnter,
+		MouseLeave = props.MouseLeave,
+		InputBegan = props.InputBegan,
+		if props.CornerRadius then UICorner({ CornerRadius = props.CornerRadius }) else nil,
 	})
 end
 

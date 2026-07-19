@@ -4,7 +4,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- Packages
 local Vide = require(ReplicatedStorage.Packages.Vide)
-local create = Vide.create
+local Frame = require(ReplicatedStorage.Source.Shared.Components.UI.Frame)
 
 local capturedMenus = {}
 
@@ -15,10 +15,8 @@ for _, module in script.Parent:GetChildren() do
 end
 
 return function()
-	local menu = create("Frame")({
+	local menu = Frame({
 		Name = "MenuRoot",
-		Size = UDim2.fromScale(1, 1),
-		BackgroundTransparency = 1,
 	})
 
 	for _, menuModule in capturedMenus do
