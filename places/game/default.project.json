@@ -20,8 +20,11 @@
         },
         "Features": {
           "$className": "Folder",
-          "Placeholder": {
-            "$path": "src/features/Placeholder.luau"
+          "Game": {
+            "$className": "Folder",
+            "GameServiceClient": {
+              "$path": "src/features/game/GameServiceClient.luau"
+            }
           }
         },
         "Game": {
@@ -70,6 +73,15 @@
         "$className": "Folder",
         "Server": {
           "$path": "src/startup/Server.server.luau"
+        }
+      },
+      "Features": {
+        "$className": "Folder",
+        "Game": {
+          "$className": "Folder",
+          "GameServiceServer": {
+            "$path": "src/features/game/GameServiceServer.luau"
+          }
         }
       }
     }
