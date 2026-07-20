@@ -4,6 +4,7 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const PLACES_DIR = path.join(ROOT, "places");
 const SHARED_SRC = path.join(ROOT, "shared", "src");
+const RUNTIME_DIR = path.join(ROOT, "runtime");
 
 function toPosix(p) {
   return p.split(path.sep).join("/");
@@ -149,6 +150,29 @@ function generateForPlace(placeName) {
     source.Shared = { $className: "Folder" };
     sss.Shared = { $className: "Folder" };
     processTree(SHARED_SRC, "../../shared/src", sss.Shared, source.Shared);
+  }
+
+  // Process runtime scripts (StarterCharacterScripts)
+  if (fs.existsSync(RUNTIME_DIR)) {
+    const runtimeFiles = fs
+      .readdirSync(RUNTIME_DIR)
+      .filter((f) => f.endsWith(".luau"));
+
+    if (runtimeFiles.length > 0) {
+      if (!tree.tree.StarterPlayer) {
+        tree.tree.StarterPlayer = {};
+      }
+      if (!tree.tree.StarterPlayer.StarterCharacterScripts) {
+        tree.tree.StarterPlayer.StarterCharacterScripts = {};
+      }
+
+      runtimeFiles.forEach((file) => {
+        const name = path.basename(file, ".luau").split(".")[0];
+        tree.tree.StarterPlayer.StarterCharacterScripts[name] = {
+          $path: `../../runtime/${file}`,
+        };
+      });
+    }
   }
 
   // Clean empty folders
