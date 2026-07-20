@@ -13,12 +13,6 @@ local Assets = ReplicatedStorage.Assets
 local RedWrestler = Assets.RedWrestler:Clone()
 local BlueWrestler = Assets.BlueWrestler:Clone()
 
---[[
-1. Red on left, blue on right
-2. Clone model from ReplicatedStorage.Assets
-3. Parent RedWrestler to StarterPlayer
---]]
-
 type RoundServiceServer = typeof(RoundServiceServer) & {
 	networker: Networker.Server,
 	allMaps: Folder,

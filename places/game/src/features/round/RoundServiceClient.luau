@@ -25,8 +25,8 @@ currentCamera.CameraType = Enum.CameraType.Scriptable
 function RoundServiceClient.Init(self: RoundServiceClient)
 	self.networker = Networker.client.new("RoundService", self)
 	currentCamera.CFrame = cameraPart.CFrame
-	self:BeginRound()
-	-- for now we can just use an arbitrary array of players being our own player + the dummy rig, but in the future will swap it out with Players:GetPlayers
+	self.networker:fire("BeginRound")
+	-- for now we can just use an arbitrary array of players, but in the future will swap it out with Players:GetPlayers
 	self.players = { player1 = player, player2 = workspace:WaitForChild("BlueWrestler") }
 	RunService.RenderStepped:Connect(function(dt: number)
 		self:TrackCameraToPlayers(dt)
@@ -50,16 +50,11 @@ function RoundServiceClient.TrackCameraToPlayers(self: RoundServiceClient, dt: n
 	end
 
 	local midpoint = (playerOneHrp.Position + playerTwoHrp.Position) / 2
-
 	local targetPos = Vector3.new(midpoint.X, midpoint.Y, cameraPart.Position.Z)
 	local smoothing = 1 - math.exp(-20 * dt)
 	local newPos = cameraPart.Position:Lerp(targetPos, smoothing)
 	cameraPart.Position = newPos
 	currentCamera.CFrame = cameraPart.CFrame
-end
-
-function RoundServiceClient.BeginRound(self: RoundServiceClient)
-	self.networker:fire("BeginRound")
 end
 
 return RoundServiceClient
