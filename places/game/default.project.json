@@ -25,12 +25,24 @@
             "GameServiceClient": {
               "$path": "src/features/game/GameServiceClient.luau"
             }
+          },
+          "Movement": {
+            "$className": "Folder",
+            "MovementServiceClient": {
+              "$path": "src/features/movement/MovementServiceClient.luau"
+            }
+          },
+          "Round": {
+            "$className": "Folder",
+            "RoundServiceClient": {
+              "$path": "src/features/round/RoundServiceClient.luau"
+            }
           }
         },
         "Game": {
           "$className": "Folder",
-          "Placeholder": {
-            "$path": "src/game/Placeholder.luau"
+          "AnimationIds": {
+            "$path": "src/game/AnimationIds.luau"
           }
         },
         "Shared": {
@@ -83,6 +95,15 @@
               }
             }
           },
+          "Modules": {
+            "$className": "Folder",
+            "AnimationLoader": {
+              "$path": "../../shared/src/modules/AnimationLoader.luau"
+            },
+            "CharacterLoader": {
+              "$path": "../../shared/src/modules/CharacterLoader.luau"
+            }
+          },
           "root.story": {
             "$path": "../../shared/src/root.story.luau"
           }
@@ -101,11 +122,24 @@
       },
       "Features": {
         "$className": "Folder",
-        "Game": {
+        "Movement": {
           "$className": "Folder",
-          "GameServiceServer": {
-            "$path": "src/features/game/GameServiceServer.luau"
+          "MovementServiceServer": {
+            "$path": "src/features/movement/MovementServiceServer.luau"
           }
+        },
+        "Round": {
+          "$className": "Folder",
+          "RoundServiceServer": {
+            "$path": "src/features/round/RoundServiceServer.luau"
+          }
+        }
+      }
+    },
+    "StarterPlayer": {
+      "StarterCharacterScripts": {
+        "DisablePlayerControls": {
+          "$path": "../../runtime/DisablePlayerControls.client.luau"
         }
       }
     }
