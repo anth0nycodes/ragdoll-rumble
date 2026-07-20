@@ -58,16 +58,32 @@ function RoundServiceServer.BeginRound(self: RoundServiceServer, player: Player)
 	if not humanoidRootPart then
 		return
 	end
-	humanoidRootPart.CFrame = self.currentSpawnPoint.CFrame - Vector3.new(2.5, 0, 0)
+	humanoidRootPart.CFrame = self.currentSpawnPoint.CFrame
 
+	-- Simulated player model for the other player, since we don't have matchmaking yet
 	BlueWrestler.Parent = workspace
 	local offset = humanoidRootPart.CFrame * CFrame.new(0, 0, -5)
 	local facingPlayer = CFrame.lookAt(offset.Position, humanoidRootPart.Position)
 	BlueWrestler:PivotTo(facingPlayer)
+
+	-- Grab the runtime simulated player
+	local simulatedPlayer = workspace.BlueWrestler
+	print("Simulated player:", simulatedPlayer)
+
 	local weld = Instance.new("WeldConstraint")
-	weld.Part0 = BlueWrestler.PrimaryPart
+	weld.Part0 = simulatedPlayer.PrimaryPart
 	weld.Part1 = humanoidRootPart
-	weld.Parent = BlueWrestler.PrimaryPart
+	weld.Parent = simulatedPlayer.PrimaryPart
+
+	-- Grabs the midpoint between the two players and centers them accordingly to the spawn point
+	local midpoint = (humanoidRootPart.Position + simulatedPlayer.PrimaryPart.Position) / 2
+	local correction = self.currentSpawnPoint.Position - midpoint
+	humanoidRootPart.CFrame += correction
+
+	-- Simulated round begin time, where players drop down
+	task.delay(3, function()
+		self.currentSpawnPoint.CanCollide = false
+	end)
 end
 
 return RoundServiceServer

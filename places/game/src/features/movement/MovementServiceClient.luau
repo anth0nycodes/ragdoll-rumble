@@ -30,7 +30,7 @@ function MovementServiceClient.Init(self: MovementServiceClient)
 	AnimationLoader.Init(function()
 		self.tracks =
 			{ idle = AnimationLoader.LoadAnimation(idleAnimation), jump = AnimationLoader.LoadAnimation(jumpAnimation) }
-		self:OverrideDefaultIdleAnimation()
+		self:OverrideDefaultAnimations()
 		self:Idle()
 	end)
 
@@ -57,16 +57,22 @@ function MovementServiceClient.Init(self: MovementServiceClient)
 	end)
 end
 
-function MovementServiceClient.OverrideDefaultIdleAnimation(_self: MovementServiceClient)
+function MovementServiceClient.OverrideDefaultAnimations(_self: MovementServiceClient)
 	local character = player.Character or player.CharacterAdded:Wait()
+	local humanoid = character:WaitForChild("Humanoid") :: Humanoid
+
 	local animateScript = character:WaitForChild("Animate") :: LocalScript
 	local idleConfig = animateScript:WaitForChild("idle")
+	humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall, false) -- Remove default fall animations
+
 	for _, child in idleConfig:GetChildren() do
-		local newIdleAnimation = Instance.new("Animation")
-		newIdleAnimation.Name = child.Name
-		newIdleAnimation.AnimationId = AnimationIds.wrestlerIdle
-		child:Destroy()
-		newIdleAnimation.Parent = idleConfig
+		if child:IsA("Animation") then
+			local newIdleAnimation = Instance.new("Animation")
+			newIdleAnimation.Name = child.Name
+			newIdleAnimation.AnimationId = AnimationIds.wrestlerIdle
+			child:Destroy()
+			newIdleAnimation.Parent = idleConfig
+		end
 	end
 end
 
