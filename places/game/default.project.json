@@ -26,16 +26,19 @@
               "$path": "src/features/game/GameServiceClient.luau"
             }
           },
-          "Movement": {
+          "Gameplay": {
             "$className": "Folder",
-            "MovementServiceClient": {
-              "$path": "src/features/movement/MovementServiceClient.luau"
-            }
-          },
-          "Round": {
-            "$className": "Folder",
-            "RoundServiceClient": {
-              "$path": "src/features/round/RoundServiceClient.luau"
+            "Movement": {
+              "$className": "Folder",
+              "MovementServiceClient": {
+                "$path": "src/features/gameplay/movement/MovementServiceClient.luau"
+              }
+            },
+            "Round": {
+              "$className": "Folder",
+              "RoundServiceClient": {
+                "$path": "src/features/gameplay/round/RoundServiceClient.luau"
+              }
             }
           }
         },
@@ -122,16 +125,19 @@
       },
       "Features": {
         "$className": "Folder",
-        "Movement": {
+        "Gameplay": {
           "$className": "Folder",
-          "MovementServiceServer": {
-            "$path": "src/features/movement/MovementServiceServer.luau"
-          }
-        },
-        "Round": {
-          "$className": "Folder",
-          "RoundServiceServer": {
-            "$path": "src/features/round/RoundServiceServer.luau"
+          "Movement": {
+            "$className": "Folder",
+            "MovementServiceServer": {
+              "$path": "src/features/gameplay/movement/MovementServiceServer.luau"
+            }
+          },
+          "Round": {
+            "$className": "Folder",
+            "RoundServiceServer": {
+              "$path": "src/features/gameplay/round/RoundServiceServer.luau"
+            }
           }
         }
       }

@@ -60,7 +60,6 @@ end
 function MovementServiceClient.OverrideDefaultAnimations(_self: MovementServiceClient)
 	local character = player.Character or player.CharacterAdded:Wait()
 	local humanoid = character:WaitForChild("Humanoid") :: Humanoid
-
 	local animateScript = character:WaitForChild("Animate") :: LocalScript
 	local idleConfig = animateScript:WaitForChild("idle")
 	humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall, false) -- Remove default fall animations

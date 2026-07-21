@@ -15,6 +15,7 @@ function GameServiceClient.Init(_self: GameServiceClient)
 	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
 	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.EmotesMenu, false)
+	StarterGui:SetCore("ResetButtonCallback", false)
 	playerGui.ScreenOrientation = Enum.ScreenOrientation.LandscapeSensor
 end
 

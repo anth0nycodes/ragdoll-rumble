@@ -40,6 +40,7 @@ function RoundServiceServer.Init(self: RoundServiceServer)
 end
 
 function RoundServiceServer.BeginRound(self: RoundServiceServer, player: Player)
+	-- TODO: once matchmaking is implemented, utilize Players:GetPlayers() then index for players[1] and players[2]
 	RedWrestler.Name = "StarterCharacter"
 	RedWrestler.Parent = StarterPlayer
 	if not self.currentSpawnPoint then

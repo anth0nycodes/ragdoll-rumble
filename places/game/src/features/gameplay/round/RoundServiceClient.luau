@@ -26,7 +26,7 @@ function RoundServiceClient.Init(self: RoundServiceClient)
 	self.networker = Networker.client.new("RoundService", self)
 	currentCamera.CFrame = cameraPart.CFrame
 	self.networker:fire("BeginRound")
-	-- for now we can just use an arbitrary array of players, but in the future will swap it out with Players:GetPlayers
+	-- TODO: for now we can just use an arbitrary array of players, but in the future will swap it out with Players:GetPlayers
 	self.players = { player1 = player, player2 = workspace:WaitForChild("BlueWrestler") }
 	RunService.RenderStepped:Connect(function(dt: number)
 		self:TrackCameraToPlayers(dt)
