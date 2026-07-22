@@ -9,15 +9,13 @@ local player = Players.LocalPlayer
 assert(player, "Player is not defined")
 local playerGui = player:WaitForChild("PlayerGui") :: PlayerGui
 
-function GameServiceClient.Init()
-	local cameraPart = workspace:WaitForChild("CameraPart") :: Part
-	local currentCamera = workspace.CurrentCamera
-	assert(currentCamera, "CurrentCamera is not defined")
-	currentCamera.CameraType = Enum.CameraType.Scriptable
-	currentCamera.CFrame = cameraPart.CFrame
+type GameServiceClient = typeof(GameServiceClient)
+
+function GameServiceClient.Init(_self: GameServiceClient)
 	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Health, false)
 	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
 	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.EmotesMenu, false)
+	StarterGui:SetCore("ResetButtonCallback", false)
 	playerGui.ScreenOrientation = Enum.ScreenOrientation.LandscapeSensor
 end
 

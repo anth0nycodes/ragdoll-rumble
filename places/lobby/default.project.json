@@ -101,6 +101,15 @@
               }
             }
           },
+          "Modules": {
+            "$className": "Folder",
+            "AnimationLoader": {
+              "$path": "../../shared/src/modules/AnimationLoader.luau"
+            },
+            "CharacterLoader": {
+              "$path": "../../shared/src/modules/CharacterLoader.luau"
+            }
+          },
           "root.story": {
             "$path": "../../shared/src/root.story.luau"
           }
@@ -124,6 +133,13 @@
           "GameServiceServer": {
             "$path": "src/features/game/GameServiceServer.luau"
           }
+        }
+      }
+    },
+    "StarterPlayer": {
+      "StarterCharacterScripts": {
+        "DisablePlayerControls": {
+          "$path": "../../runtime/DisablePlayerControls.client.luau"
         }
       }
     }
